@@ -27,7 +27,6 @@ package org.spongepowered.common.effect.particle;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
 import net.minecraft.util.EnumParticleTypes;
 import org.spongepowered.api.effect.particle.ParticleType;
 import org.spongepowered.api.item.inventory.ItemStack;

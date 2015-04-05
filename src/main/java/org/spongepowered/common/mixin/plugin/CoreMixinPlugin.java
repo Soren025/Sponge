@@ -25,26 +25,22 @@
 package org.spongepowered.common.mixin.plugin;
 
 import com.google.common.collect.ImmutableList;
-import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.apache.logging.log4j.LogManager;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
-import org.spongepowered.common.config.SpongeConfig;
+import org.spongepowered.common.Sponge;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 public class CoreMixinPlugin implements IMixinConfigPlugin {
-    private static SpongeConfig<SpongeConfig.GlobalConfig> GLOBAL_CONFIG;
-    private static File SPONGE_CONFIG_DIR = new File('.' + File.separator + "config" + File.separator + "sponge" + File.separator);
+
+    private static final List<String> mixins = ImmutableList.of();
 
     @Override
     public void onLoad(String mixinPackage) {
-        GLOBAL_CONFIG = new SpongeConfig<SpongeConfig.GlobalConfig>(SpongeConfig.Type.GLOBAL, new File(SPONGE_CONFIG_DIR, "global" + ".conf"),
-                "sponge");
+        // Load config
+        Sponge.getGlobalConfig();
     }
 
     @Override
@@ -64,7 +60,7 @@ public class CoreMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public List<String> getMixins() {
-        return ImmutableList.of();
+        return mixins;
     }
 
     @Override
@@ -75,14 +71,6 @@ public class CoreMixinPlugin implements IMixinConfigPlugin {
     @Override
     public void postApply(String targetClassName, ClassNode targetClass,
             String mixinClassName, IMixinInfo mixinInfo) {
-    }
-
-    public static SpongeConfig<SpongeConfig.GlobalConfig> getGlobalConfig() {
-        return GLOBAL_CONFIG;
-    }
-
-    public static File getConfigDir() {
-        return SPONGE_CONFIG_DIR;
     }
 
 }

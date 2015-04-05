@@ -27,7 +27,6 @@ package org.spongepowered.common.entity.player.gamemode;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
 import net.minecraft.world.WorldSettings;
 import org.apache.commons.lang3.NotImplementedException;
 import org.spongepowered.api.entity.player.gamemode.GameMode;

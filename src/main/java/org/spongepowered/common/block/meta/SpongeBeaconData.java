@@ -24,8 +24,6 @@
  */
 package org.spongepowered.common.block.meta;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;
 import org.spongepowered.api.block.tile.carrier.Beacon;
@@ -33,8 +31,6 @@ import org.spongepowered.api.block.tile.data.BeaconData;
 import org.spongepowered.api.potion.PotionEffectType;
 import org.spongepowered.api.service.persistence.data.DataContainer;
 import org.spongepowered.api.service.persistence.data.MemoryDataContainer;
-
-import javax.annotation.Nullable;
 
 public class SpongeBeaconData implements BeaconData {
 

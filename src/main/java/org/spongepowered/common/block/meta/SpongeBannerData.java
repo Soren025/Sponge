@@ -29,7 +29,6 @@ import static org.spongepowered.api.service.persistence.data.DataQuery.of;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Optional;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import org.spongepowered.api.block.tile.Banner;
 import org.spongepowered.api.block.tile.data.BannerData;

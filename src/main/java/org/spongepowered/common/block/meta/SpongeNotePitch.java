@@ -26,7 +26,6 @@ package org.spongepowered.common.block.meta;
 
 import com.google.common.base.Objects;
 import org.spongepowered.api.block.tile.data.NotePitch;
-import org.spongepowered.api.util.annotation.NonnullByDefault;
 
 public class SpongeNotePitch implements NotePitch {
 

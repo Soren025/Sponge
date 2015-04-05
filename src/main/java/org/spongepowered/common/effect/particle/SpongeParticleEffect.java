@@ -28,7 +28,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.flowpowered.math.vector.Vector3d;
 import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
 import org.spongepowered.api.effect.particle.ParticleEffect;
 import org.spongepowered.api.item.inventory.ItemStack;
 

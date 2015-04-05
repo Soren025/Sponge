@@ -46,7 +46,6 @@ import org.spongepowered.common.Sponge;
 import org.spongepowered.common.config.SpongeConfig;
 import org.spongepowered.common.interfaces.IMixinWorld;
 import org.spongepowered.common.interfaces.IMixinWorldProvider;
-import org.spongepowered.common.mixin.plugin.CoreMixinPlugin;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -401,7 +400,7 @@ public class SpongeHooks {
     }
 
     public static void enableThreadContentionMonitoring() {
-        if (!CoreMixinPlugin.getGlobalConfig().getConfig().getDebug().isEnableThreadContentionMonitoring()) {
+        if (!Sponge.getGlobalConfig().getConfig().getDebug().isEnableThreadContentionMonitoring()) {
             return;
         }
         java.lang.management.ThreadMXBean mbean = ManagementFactory.getThreadMXBean();
@@ -416,7 +415,7 @@ public class SpongeHooks {
                 .getDimensionConfig().getConfig().isConfigEnabled()) {
             return ((IMixinWorldProvider) world.provider).getDimensionConfig();
         } else {
-            return CoreMixinPlugin.getGlobalConfig();
+            return Sponge.getGlobalConfig();
         }
     }
 

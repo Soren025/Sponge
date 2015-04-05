@@ -28,7 +28,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static org.spongepowered.api.service.persistence.data.DataQuery.of;
 
 import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
 import org.spongepowered.api.block.tile.data.BannerData.PatternLayer;
 import org.spongepowered.api.block.tile.data.BannerPatternShape;
 import org.spongepowered.api.item.DyeColor;

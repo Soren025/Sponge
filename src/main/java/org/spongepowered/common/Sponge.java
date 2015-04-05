@@ -26,10 +26,15 @@ package org.spongepowered.common;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
+import static org.spongepowered.common.config.SpongeConfig.Type.GLOBAL;
 
 import com.google.inject.Injector;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.api.Game;
+import org.spongepowered.common.config.SpongeConfig;
+import org.spongepowered.common.launch.SpongeLaunch;
+
+import java.io.File;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
@@ -76,6 +81,32 @@ public class Sponge {
 
     public static SpongeImpl impl() {
         return getInstance().impl;
+    }
+
+    private static final File gameDir = SpongeLaunch.getGameDirectory();
+    private static final File configDir = SpongeLaunch.getConfigDirectory();
+    private static final File pluginsDir = SpongeLaunch.getPluginsDirectory();
+
+    @Nullable private static SpongeConfig<SpongeConfig.GlobalConfig> globalConfig;
+
+    public static File getGameDirectory() {
+        return gameDir;
+    }
+
+    public static File getConfigDirectory() {
+        return configDir;
+    }
+
+    public static File getPluginsDirectory() {
+        return pluginsDir;
+    }
+
+    public static SpongeConfig<SpongeConfig.GlobalConfig> getGlobalConfig() {
+        if (globalConfig == null) {
+            globalConfig = new SpongeConfig<SpongeConfig.GlobalConfig>(GLOBAL, new File(new File(configDir, "sponge"), "global.conf"), "sponge");
+        }
+
+        return globalConfig;
     }
 
 }
