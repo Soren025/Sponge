@@ -51,6 +51,7 @@ import org.spongepowered.common.Sponge;
 import org.spongepowered.common.interfaces.IMixinEntity;
 import org.spongepowered.common.registry.SpongeGameRegistry;
 import org.spongepowered.common.util.SpongeHooks;
+
 import java.util.ArrayDeque;
 import java.util.EnumSet;
 import java.util.UUID;

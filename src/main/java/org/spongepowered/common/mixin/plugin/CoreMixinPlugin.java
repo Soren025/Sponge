@@ -28,7 +28,6 @@ import com.google.common.collect.ImmutableList;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
-import org.spongepowered.common.Sponge;
 
 import java.util.List;
 import java.util.Set;
@@ -39,8 +38,6 @@ public class CoreMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public void onLoad(String mixinPackage) {
-        // Load config
-        Sponge.getGlobalConfig();
     }
 
     @Override
